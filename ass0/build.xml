@@ -1,0 +1,12 @@
+<project default="compile">
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac classpath="bin" srcdir="src" destdir="bin" includeantruntime="false"/>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target name="run" depends="compile">
+        <java classname="HelloWorld" classpath="bin" fork="true"/>
+    </target>
+</project>
